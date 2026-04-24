@@ -185,7 +185,7 @@ function Midi (client) {
 
   this.refresh = function () {
     if (!navigator.requestMIDIAccess) { return }
-    navigator.requestMIDIAccess().then(this.access, (err) => {
+    navigator.requestMIDIAccess({ sysex: false }).then(this.access, (err) => {
       console.warn('No Midi', err)
     })
   }

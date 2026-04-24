@@ -39,7 +39,7 @@
       })
 
       // Register PWA Service Worker
-      if (location.protocol.substr(0,4) !== ('file') && 'serviceWorker' in navigator) {
+      if (location.protocol === 'https:' && 'serviceWorker' in navigator) {
         try { navigator.serviceWorker.register('sw.js') } catch (err) { console.warn(err) }
       }
     </script>
